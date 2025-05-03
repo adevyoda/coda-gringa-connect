@@ -55,12 +55,13 @@ const AboutProject: React.FC = () => {
             <h3 className="text-xl font-semibold mb-3 text-coda-darkPurple">Quem Está Por Trás</h3>
             <ul className="text-gray-700 space-y-2">
               <li><strong>Nome do Projeto:</strong> Coda na Gringa</li>
-              <li><strong>Empresa:</strong> Coda na Gringa Ltda</li>
-              <li><strong>CNPJ:</strong> XX.XXX.XXX/0001-XX</li>
-              <li><strong>Sede:</strong> São Paulo/SP, Brasil</li>
+              <li><strong>Empresa:</strong> Expecial Serviços do Brasil</li>
+              <li><strong>CNPJ:</strong> 44.860.681.0001/33</li>
+              <li><strong>Sede:</strong> R Dona Maria César, 170, Sl 203,
+              CEP: 50.030-140, Recife, Pernambuco</li>
               <li className="pt-2">
                 <a 
-                  href="https://wa.me/5511999999999" 
+                  href="https://wa.me/5581991896229" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center text-coda-purple hover:text-coda-darkPurple transition-colors"

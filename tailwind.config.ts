@@ -1,5 +1,5 @@
-
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate"; // Corrigido: usar import
 
 export default {
 	darkMode: ["class"],
@@ -20,38 +20,40 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Estas cores referenciam as variáveis CSS definidas em src/index.css
+				// Certifique-se de atualizar os valores HSL dessas variáveis lá
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: 'hsl(var(--primary))', // Usando o Azul Escuro do logo
+					foreground: 'hsl(var(--primary-foreground))' // Cor do texto no botão primário (idealmente Branco do logo)
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: 'hsl(var(--secondary))', // Usando o Azul Claro do logo
+					foreground: 'hsl(var(--secondary-foreground))' // Cor do texto no botão secundário (idealmente Azul Escuro do logo)
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
+					DEFAULT: 'hsl(var(--destructive))', // Cor para ações destrutivas (manter padrão ou ajustar)
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
+					DEFAULT: 'hsl(var(--muted))', // Cor para elementos menos proeminentes
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
+					DEFAULT: 'hsl(var(--accent))', // Cor de destaque (pode ser Amarelo ou Laranja do logo)
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: 'hsl(var(--popover))', // Fundo de popovers
+					foreground: 'hsl(var(--popover-foreground))' // Cor do texto em popovers
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: 'hsl(var(--card))', // Fundo de cards
+					foreground: 'hsl(var(--card-foreground))' // Cor do texto em cards
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -63,15 +65,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				coda: {
-					purple: '#9b87f5',
-					darkPurple: '#7E69AB',
-					lightPurple: '#E5DEFF',
-					blue: '#D3E4FD',
-					darkBlue: '#0EA5E9',
-					gray: '#8E9196',
-					lightGray: '#F1F0FB'
-				}
+				// Removendo a paleta 'coda' antiga para evitar conflitos e limpar o código
+				// Se você ainda precisar de alguma cor específica da paleta antiga,
+				// pode adicioná-la individualmente aqui ou em src/index.css como uma nova variável CSS.
+
+				// Opcional: Adicionar as cores restantes do logo como cores personalizadas
+				// Se você definiu estas como variáveis CSS no index.css (ex: --brand-amarelo, --brand-laranja)
+				// pode referenciá-las aqui para usar classes como `bg-brandAmarelo`:
+				// brandAmarelo: 'hsl(var(--brand-amarelo))',
+				// brandLaranja: 'hsl(var(--brand-laranja))',
+				// Ou, se preferir usar os valores diretos aqui (menos flexível para temas):
+				logoAmarelo: '#fbdc0e',
+				logoLaranja: '#f5a524',
+				logoBranco: '#ffffff', // Já coberto por --background na maioria dos casos
+				logoAzulClaro: '#5dc0fe', // Já coberto por --secondary na maioria dos casos
+				logoAzulEscuro: '#1571c6', // Já coberto por --primary na maioria dos casos
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -111,10 +120,12 @@ export default {
 				'fade-up': 'fade-up 0.7s ease-out forwards'
 			},
 			backgroundImage: {
-				'hero-gradient': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
-				'card-gradient': 'linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%)'
+				// Ajustando os gradientes para usar as novas variáveis semânticas de cor
+				'hero-gradient': 'linear-gradient(90deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%)',
+				// Assumindo que o gradiente do card é um cinza claro, ajustamos para usar muted e background
+				'card-gradient': 'linear-gradient(to right, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)'
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate], // Corrigido: usar a variável importada
 } satisfies Config;

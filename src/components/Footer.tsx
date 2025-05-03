@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 text-center md:text-left">
             <p className="text-gray-600">
-              © {currentYear} Coda na Gringa | Coda na Gringa Ltda | CNPJ: XX.XXX.XXX/0001-XX
+              © {currentYear} Coda na Gringa | EXPECIAL SERVICOS DO BRASIL LTDA | CNPJ: 44.860.681.0001/33
             </p>
             <p className="text-gray-600 text-sm">
               Todos os direitos reservados.
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               Política de Privacidade
             </a>
             <a 
-              href="https://wa.me/5511999999999" 
+              href="https://wa.me/5581991896229" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center text-gray-600 hover:text-coda-purple transition-colors"

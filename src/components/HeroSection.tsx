@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl animate-fade-up">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight gradient-text">
-            DESBLOQUEIE SEU POTENCIAL GLOBAL: TRABALHE COM TECH ONDE QUISER.
+          SEU CÓDIGO VALE MAIS LÁ FORA. CHEGOU A HORA DE GANHAR EM MOEDA FORTE.
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-700">
             Estamos construindo a ponte para conectar você, dev brasileiro, às melhores vagas

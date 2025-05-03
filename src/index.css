@@ -1,39 +1,38 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* Branco do logo */
+    --foreground: 210 81% 47%; /* Azul Escuro do logo para texto principal */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Branco */
+    --card-foreground: 210 81% 47%; /* Azul Escuro */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* Branco */
+    --popover-foreground: 210 81% 47%; /* Azul Escuro */
 
-    --primary: 258 77% 74%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 81% 47%; /* Azul Escuro do logo como Primária */
+    --primary-foreground: 0 0% 100%; /* Branco para texto no botão primário */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 203 99% 67%; /* Azul Claro do logo como Secundária */
+    --secondary-foreground: 210 81% 47%; /* Azul Escuro para texto no botão secundário */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 203 99% 90%; /* Um tom mais claro do azul claro para elementos muted */
+    --muted-foreground: 210 81% 60%; /* Um tom médio do azul escuro/cinza para texto muted */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 50 98% 52%; /* Amarelo do logo como Destaque */
+    --accent-foreground: 210 81% 47%; /* Azul Escuro para texto no destaque */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Manter um vermelho padrão para destructive ou ajustar se houver uma cor de erro na paleta do logo */
+    --destructive-foreground: 0 0% 100%; /* Branco */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 258 77% 74%;
+    --border: 214.3 31.8% 91.4%; /* Manter um cinza claro padrão para bordas ou ajustar */
+    --input: 214.3 31.8% 91.4%; /* Manter um cinza claro padrão para inputs ou ajustar */
+    --ring: 210 81% 47%; /* Azul Escuro do logo para o ring de foco */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Manter o radius padrão ou ajustar */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -43,36 +42,43 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Variável para o Laranja do logo, se desejar usá-la diretamente no CSS */
+    --brand-laranja: 34 92% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222.2 84% 4.9%; /* Fundo escuro padrão do shadcn ou um azul escuro bem profundo */
+    --foreground: 0 0% 100%; /* Branco do logo para texto principal */
 
     --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 81% 47%; /* Azul Escuro do logo como Primária */
+    --primary-foreground: 0 0% 100%; /* Branco */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 203 99% 67%; /* Azul Claro do logo como Secundária */
+    --secondary-foreground: 222.2 84% 4.9%; /* Fundo escuro */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 222.2 84% 15%; /* Um tom mais escuro para muted */
+    --muted-foreground: 210 81% 80%; /* Um tom mais claro do azul escuro/cinza para texto muted */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 50 98% 52%; /* Amarelo do logo como Destaque */
+    --accent-foreground: 222.2 84% 4.9%; /* Fundo escuro */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%; /* Manter um vermelho padrão para destructive ou ajustar */
+    --destructive-foreground: 0 0% 100%; /* Branco */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217.2 32.6% 14.5%; /* Manter borda escura padrão ou ajustar */
+    --input: 217.2 32.6% 14.5%; /* Manter input escuro padrão ou ajustar */
+    --ring: 210 81% 47%; /* Azul Escuro do logo para o ring de foco */
+
+    /* Variável para o Laranja do logo, se desejar usá-la diretamente no CSS */
+    --brand-laranja: 34 92% 55%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,16 +102,17 @@
   .section {
     @apply py-16 px-6 md:px-12 lg:px-24;
   }
-  
+
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6;
   }
-  
+
   .glass-card {
     @apply bg-white bg-opacity-70 backdrop-blur-sm border border-gray-200 rounded-xl shadow-lg;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-coda-purple to-coda-darkPurple;
+    /* Corrigido: substituindo to-coda-darkPurple por to-secondary */
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
   }
 }
