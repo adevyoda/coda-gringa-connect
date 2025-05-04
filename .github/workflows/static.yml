@@ -1,0 +1,62 @@
+# Sample workflow for building and deploying a Vite React app to GitHub Pages
+# based on the standard Node.js / HTML static template, adjusted for Vite build
+
+name: Deploy VitePress site to Pages
+
+on:
+  push:
+    branches:
+      - main # Altere para a sua branch principal se for diferente (ex: master)
+    # Remover tags:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_ACTOR to approve the deployment of the site.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the runs that have been started.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest # Use o runner padrão do Ubuntu
+
+    steps:
+      - name: Checkout # Passo para baixar o código do seu repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necessário para a action deploy-pages
+
+      - name: Setup Node.js # Passo para configurar o ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Recomendo usar uma versão LTS recente do Node.js
+
+      - name: Install dependencies # Passo para instalar as dependências do projeto
+        run: npm install
+
+      - name: Build project # Passo FUNDAMENTAL: Rodar o script de build do seu package.json
+        run: npm run build
+
+      - name: Setup Pages # Configura o ambiente para a action de deploy
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact # Passo para subir os arquivos gerados pelo build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload a pasta 'dist' onde o Vite colocou os arquivos estáticos
+          path: './dist' # <<--- **Ajuste aqui se seu build gera em outra pasta!**
+
+      - name: Deploy to GitHub Pages # Passo final: Implanta os arquivos para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
