@@ -41,7 +41,7 @@ const AboutProject: React.FC = () => {
                 YouTube <ExternalLink className="h-4 w-4 ml-1" />
               </a>
               <a 
-                href="https://spotify.com/show/CodaNaGringa" 
+                href="https://open.spotify.com/show/3YAGl0cRCqUitQlehsMFqs" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center text-coda-purple hover:text-coda-darkPurple transition-colors"
