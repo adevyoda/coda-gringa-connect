@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
-import { Rocket } from "lucide-react";
+import { Rocket, ExternalLink } from "lucide-react"; // Corrigido: Adicionado ExternalLink à importação
 
 const ReferralForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -214,13 +214,15 @@ const ReferralForm: React.FC = () => {
                     />
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    className="bg-coda-purple hover:bg-coda-darkPurple text-white rounded-full font-semibold py-6 text-lg"
+
+                  <Button
+                    type="submit"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-semibold py-6 text-lg" // Classes de cor corrigidas
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Enviando..." : "INDICAR AGORA E CONSTRUIR O FUTURO 🚀"}
                   </Button>
+
                 </div>
               </form>
             </>

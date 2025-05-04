@@ -17,16 +17,19 @@ const HeroSection: React.FC = () => {
             em fase de testes, feito por devs, para devs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-coda-purple hover:bg-coda-darkPurple text-white rounded-full"
-              onClick={() => {
-                const form = document.getElementById('referral-form');
-                form?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Indicar um Dev <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary text-primary hover:bg-secondary rounded-full" 
+            onClick={() => {
+              const about = document.getElementById('about-section');
+              about?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Indicar um Dev 
+          </Button>
+
             <Button 
               size="lg" 
               variant="outline" 
@@ -41,8 +44,8 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 right-0 w-full h-full md:w-1/2 opacity-10 pointer-events-none">
-        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1600&h=1600&q=80')] bg-cover bg-right"></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"> {/* Mude right-0 para left-0 para garantir que cubra desde a esquerda */}
+        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1600&h=1600&q=80')] bg-cover bg-center"></div> {/* Mude bg-right para bg-center para centralizar a imagem dentro do contêiner total */}
       </div>
     </section>
   );
