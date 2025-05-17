@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 100%;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Branco do logo - Fundo Principal Claro */
+    --foreground: 210 81% 47%; /* Azul Escuro do logo - Texto Principal Claro */
+
+    --card: 0 0% 100%; /* Branco - Fundo de Cards Claro */
+    --card-foreground: 210 81% 47%; /* Azul Escuro - Texto em Cards Claro */
+    --card-border: 214.3 31.8% 91.4%; /* Cinza claro padrão para bordas de cards */
+
+    --popover: 0 0% 100%; /* Branco - Fundo de Popovers Claro */
+    --popover-foreground: 210 81% 47%; /* Azul Escuro - Texto em Popovers Claro */
+    --popover-border: 214.3 31.8% 91.4%; /* Cinza claro padrão para bordas de popovers */
+
+
+    --primary: 210 81% 47%; /* Azul Escuro do logo - Cor Primária (Botões, Títulos) */
+    --primary-foreground: 0 0% 100%; /* Branco - Texto em Elementos Primários */
+
+    --secondary: 203 99% 67%; /* Azul Claro do logo - Cor Secundária (Elementos Menos Proeminentes) */
+    --secondary-foreground: 210 81% 47%; /* Azul Escuro - Texto em Elementos Secundários */
+
+    --muted: 203 99% 90%; /* Tom bem claro do Azul Claro - Para fundos e textos muted */
+    --muted-foreground: 210 81% 60%; /* Tom médio do Azul Escuro - Texto muted */
+
+    --accent: 50 98% 52%; /* Amarelo do logo - Cor de Destaque/Acento */
+    --accent-foreground: 210 81% 47%; /* Azul Escuro - Texto em Elementos de Destaque */
+
+    --destructive: 0 84.2% 60.2%; /* Vermelho padrão - Cor para ações destrutivas */
+    --destructive-foreground: 0 0% 100%; /* Branco - Texto em Elementos Destrutivos */
+
+    --border: 214.3 31.8% 91.4%; /* Cinza claro padrão - Cor de Bordas */
+    --input: 214.3 31.8% 91.4%; /* Cinza claro padrão - Cor de Inputs */
+    --ring: 210 81% 47%; /* Azul Escuro - Cor do Anel de Foco (Acessibilidade!) */
+
+    --radius: 0.5rem; /* Raio padrão dos cantos arredondados */
+
+    /* Cores do Sidebar (Ajustadas para a paleta do logo) */
+    --sidebar-background: 210 81% 15%; /* Fundo Azul Escuro mais fechado para o sidebar */
+    --sidebar-foreground: 0 0% 90%; /* Branco acinzentado para texto no sidebar escuro */
+    --sidebar-primary: 203 99% 67%; /* Azul Claro para itens primários no sidebar */
+    --sidebar-primary-foreground: 210 81% 10%; /* Azul Escuro bem fechado para texto nos itens primários do sidebar */
+    --sidebar-accent: 210 81% 25%; /* Tom médio de Azul Escuro para destaque no sidebar */
+    --sidebar-accent-foreground: 0 0% 100%; /* Branco para texto no destaque do sidebar */
+    --sidebar-border: 210 81% 30%; /* Bordas um pouco mais claras no sidebar */
+    --sidebar-ring: 203 99% 67%; /* Anel de foco Azul Claro no sidebar */
+
+    /* Cores específicas do logo para uso direto, se necessário */
+    --brand-amarelo: 50 98% 52%;
+    --brand-laranja: 34 92% 55%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* Fundo Principal Escuro (padrão shadcn, similar a muitos terminais/IDEs) */
+    --foreground: 0 0% 100%; /* Branco do logo - Texto Principal Escuro */
+
+    --card: 222.2 84% 4.9%; /* Fundo de Cards Escuro */
+    --card-foreground: 0 0% 100%; /* Branco - Texto em Cards Escuro */
+     --card-border: 217.2 32.6% 14.5%; /* Borda escura para cards */
+
+
+    --popover: 222.2 84% 4.9%; /* Fundo de Popovers Escuro */
+    --popover-foreground: 0 0% 100%; /* Branco - Texto em Popovers Escuro */
+    --popover-border: 217.2 32.6% 14.5%; /* Borda escura para popovers */
+
+
+    --primary: 203 99% 67%; /* Azul Claro do logo - Cor Primária (Botões, Títulos) - Fica bem vibrante em fundo escuro */
+    --primary-foreground: 222.2 84% 10%; /* Tom escuro para texto em botões primários no tema escuro */
+
+    --secondary: 210 81% 47%; /* Azul Escuro do logo - Cor Secundária */
+    --secondary-foreground: 0 0% 100%; /* Branco - Texto em Elementos Secundários no tema escuro */
+
+    --muted: 222.2 84% 15%; /* Tom mais escuro para muted */
+    --muted-foreground: 210 81% 80%; /* Tom mais claro do azul escuro/cinza para texto muted */
+
+    --accent: 34 92% 55%; /* Laranja do logo - Cor de Destaque/Acento (contraste com o azul primário no escuro) */
+    --accent-foreground: 222.2 84% 4.9%; /* Fundo Escuro - Texto em Elementos de Destaque */
+
+    --destructive: 0 62.8% 30.6%; /* Manter um vermelho padrão para destructive ou ajustar */
+    --destructive-foreground: 0 0% 100%; /* Branco */
+
+    --border: 217.2 32.6% 14.5%; /* Bordas escuras padrão */
+    --input: 217.2 32.6% 14.5%; /* Inputs escuros padrão */
+    --ring: 203 99% 67%; /* Anel de foco Azul Claro no tema escuro */
+
+    /* Cores do Sidebar (Ajustadas para a paleta do logo e tema escuro) */
+    --sidebar-background: 240 5.9% 10%; /* Fundo bem escuro para o sidebar */
+    --sidebar-foreground: 240 4.8% 95.9%; /* Texto claro no sidebar */
+    --sidebar-primary: 203 99% 67%; /* Azul Claro para itens primários no sidebar escuro */
+    --sidebar-primary-foreground: 240 5.9% 10%; /* Fundo bem escuro para texto nos itens primários do sidebar */
+    --sidebar-accent: 240 3.7% 15.9%; /* Tom escuro para destaque no sidebar escuro */
+    --sidebar-accent-foreground: 240 4.8% 95.9%; /* Texto claro no destaque do sidebar escuro */
+    --sidebar-border: 240 3.7% 15.9%; /* Bordas escuras no sidebar */
+    --sidebar-ring: 203 99% 67%; /* Anel de foco Azul Claro no sidebar escuro */
+
+    /* Cores específicas do logo para uso direto no tema escuro */
+    --brand-amarelo: 50 98% 52%;
+    --brand-laranja: 34 92% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Usando a variável --border */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .section {
+    @apply py-16 px-6 md:px-12 lg:px-24;
+  }
+
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
+  }
+
+  .glass-card {
+    /* Corrigido: Substituído 'border-card-border' por 'border-border' */
+    @apply bg-white bg-opacity-70 backdrop-blur-sm border border-border rounded-xl shadow-lg;
+  }
+
+  .gradient-text {
+    /* Gradiente do Azul Escuro para o Azul Claro do logo */
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  /* Adicionar estilos base que programadores podem apreciar */
+  /* Exemplo: Foco visualmente claro em elementos interativos */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring)); /* Usa a cor do ring para o outline de foco */
+    outline-offset: 2px;
+  }
+}
+
+/* Opcional: Adicionar estilos para elementos específicos se notar inconsistências */
+/* Ex: Ajustar cores de links, botões, etc. se os componentes shadcn não cobrirem tudo */
+/* a {
+  @apply text-primary hover:underline;
+} */
+
+/* button {
+  @apply focus-visible:ring-ring;
+} */
