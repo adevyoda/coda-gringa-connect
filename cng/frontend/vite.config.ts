@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   //base: "/cng/", // 👈 ESSENCIAL para GitHub Pages em subdiretório
   //base: mode === 'development' ? '/cng/' : '/coda-gringa-connect/cng/',
-  base: process.env.NODE_ENV === 'production' ? '/coda-gringa-connect/' : '/cng/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/cng/',
 
   server: {
     host: "::",
