@@ -6,6 +6,7 @@
   ],
   "compilerOptions": {
     "strict": true,
+    "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
