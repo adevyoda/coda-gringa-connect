@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && echo www.expecial.com.br > dist/CNAME",
+    "build": "vite build && touch dist/.nojekyll",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
