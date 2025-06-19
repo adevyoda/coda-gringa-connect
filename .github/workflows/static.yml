@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,10 +9,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -31,16 +27,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./cng/frontend
+        working-directory: ./cng/frontend  # ✅ Caminho correto: raiz/cng/frontend
 
       - name: Build the site
         run: npm run build
-        working-directory: ./cng/frontend
+        working-directory: ./cng/frontend  # ✅
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './cng/frontend/dist'
+          path: './cng/frontend/dist'  # ✅ Pasta dist dentro de cng/frontend
 
       - name: Deploy to GitHub Pages
         id: deployment
