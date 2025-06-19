@@ -13,7 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter basename={import.meta.env.MODE === 'development' ? '' : '/coda-gringa-connect/cng/'}>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/cng" replace />} /> {/* Adicione este redirecionamento */}
           <Route path="/cng" element={<Index />} /> {/* Certifique-se de que esta rota esteja correta */}
